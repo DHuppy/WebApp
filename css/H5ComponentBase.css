@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-11-23 16:18:07
+ * @version $Id$
+ */
+/*基本图文组件样式*/
+.h5_component{
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: absolute; /*所有的组件都漂浮*/
+}

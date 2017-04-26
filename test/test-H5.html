@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>IT学习网2016课程学习情况</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<!-- 基本资源库 -->
+<script type="text/javascript" src="../js/lib/jquery.js"></script>  <!-- ..表示上一级 -->
+<script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+<!-- H5对象资源，管理内容:页和组件 -->
+<link href="../css/H5.css" rel="stylesheet">
+<script src="../js/H5.js"></script>
+
+<link href="../css/H5ComponentBase.css" rel="stylesheet">
+<script src="../js/H5ComponentBase.js"></script>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+</head>
+
+
+
+<body>
+<!-- 测试内容组织功能，以及fullPage页面切换&组件切换 -->
+
+<!-- 内容组织管理，有可能会加载若干个资源 -->
+	<script type='text/javascript'>
+		// 假设H5脚本对象写完了，怎么用呢？
+		$(function(){
+			var h5 = new H5();
+			//链式调用
+			 h5
+				.addPage('face','首页')  //返回值是H5对象本身	
+				 	.addComponent('logo',{
+				 		text:'logo',
+				 		width:400,
+				 		height:100,
+				 		css:{backgroundColor:'red',top:200,opacity:0},
+				 		center:true,
+				 		animateIn:{opacity:1},
+				 		animateOut:{opacity:0},
+				 	})
+				 	.addComponent('slogan',{
+				 		text:'slogan',
+				 		width:400,
+				 		height:100,
+				 		css:{backgroundColor:'red',top:350},
+				 		center:true,
+				 	})				 	
+			  	.addPage('desc')
+			  	 	.addComponent('caption',{
+			  	 		text:'核心理念',
+			  	 		width:400,
+				 		height:100,
+				 		css:{backgroundColor:'green',top:350},
+				 		center:true,
+			  	 	})
+			  	.addPage('page-3')
+			  		.addComponent('caption',{text:'课程分布方向'})
+			  	.loader();	
+		})
+	</script>
+</body>
+</html>

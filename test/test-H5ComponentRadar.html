@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>IT学习网2016课程学习情况</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<link href="" rel="stylesheet">
+</head>
+<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+	}
+	.iphone{
+		width: 340px;
+		height: 540px;
+		position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -270px 0 0 -170px;
+	}
+
+</style>
+
+<script type="text/javascript" src="../js/lib/jquery.js"></script>
+<script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+<!--需要基本的图文组件作为依赖-->
+<link rel="stylesheet" href="../css/H5ComponentBase.css">
+
+<!--引入雷达图资源-->
+<script type="text/javascript" src="../js/H5ComponentRadar.js"></script>
+<link rel="stylesheet" href="../css/H5ComponentRadar.css">
+
+<body>
+	<!-- 用于开发测试 H5ComponentRadar 对象（雷达图组件） -->
+	<div class="iphone">
+		
+	</div>
+	<script type="text/javascript">
+		var cfg = {
+			type : 'radar',
+			
+			width: 400,
+			height: 400,
+			data:[
+					['JS' , .85 , '#ff7676'],
+					['PHP' , .6 ],
+					['HTML5' , .7 ],
+					['CSS3' , .9 ],
+					['jQuery' , .5 ],
+
+			],
+			css  : {
+				top:100,
+				opacity:0,
+			},
+			animateIn:{ top:200,opacity:1 },
+			animateOut:{ top:100,opacity:0 },
+			center:true,
+		}
+
+		var h5 = new H5ComponentRadar( 'myName',cfg );
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function(){
+			leave = !leave;
+			$('.h5_component').trigger( leave? 'onLeave' : 'onLoad');
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>IT学习网2016课程学习情况</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<link href="" rel="stylesheet">
+</head>
+<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+	}
+	.iphone{
+		width: 340px;
+		height: 540px;
+		position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -270px 0 0 -170px;
+	}
+/*	.h5_component_base{
+		transition: all 1s;
+	}
+	.h5_component_base_load{
+		opacity: 1;
+	}
+	.h5_component_base_leave{
+		opacity: 0;
+	}*/
+</style>
+
+<script type="text/javascript" src="../js/lib/jquery.js"></script>
+<script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+<!--需要基本的图文组件作为依赖-->
+<link rel="stylesheet" href="../css/H5ComponentBase.css">
+
+<script type="text/javascript" src="../js/H5ComponentBar.js"></script>
+<!--引入垂直柱状图资源-->
+<script type="text/javascript" src="../js/H5ComponentBar_v.js"></script>
+<link rel="stylesheet" href="../css/H5ComponentBar_v.css">
+
+<body>
+	<!-- 用于开发测试 H5ComponentBar_v 对象（垂直柱图组件） -->
+	<div class="iphone">
+		
+	</div>
+	<script type="text/javascript">
+		var cfg = {
+			type : 'bar_v',
+			
+			width: 340,
+			height: 540,
+			data:[
+					['C++' , .4 , '#ff7676'],
+					['JS' , .3 ],
+					['HTML' , .25 ],
+					['CSS' , .15 ],
+					['jQuery' , .1 ],
+					['PHP' , .08 ]
+
+			],
+			css  : {
+				top:100,
+				opacity:0,
+			},
+			animateIn:{ top:200,opacity:1 },
+			animateOut:{ top:100,opacity:0 },
+			center:true,
+		}
+
+		var h5 = new H5ComponentBar_v( 'myName',cfg );
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function(){
+			leave = !leave;
+			$('.h5_component').trigger( leave? 'onLeave' : 'onLoad');
+		})
+	</script>
+</body>
+</html>

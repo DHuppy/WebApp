@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-11-23 16:18:07
+ * @version $Id$
+ */
+/*饼图组件样式*/
+.h5_component_pie{
+
+}
+.h5_component_pie canvas{
+	position: absolute;
+	top:0;
+	left: 0;     /*用canvas做动画，会进行分层，要用到  z-index */
+	width: 100%;
+	height: 100%;
+}
+.h5_component_pie .text{
+	position: absolute;
+	font-size: 12px;
+	text-align: center;
+	height: 24px;
+	z-index: 99;  /*文本要压在canvas上面*/
+	transition: all 1s;
+}

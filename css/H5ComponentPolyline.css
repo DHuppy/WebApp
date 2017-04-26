@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-11-23 16:18:07
+ * @version $Id$
+ */
+/*折线图组件样式*/
+.h5_component_polyline{
+
+}
+.h5_component_polyline canvas{
+	position: absolute;
+	top:0;
+	left: 0;     /*用canvas做动画，会进行分层，要用到  z-index */
+	width: 100%;
+	height: 100%;
+}
+.h5_component_polyline .text{
+	position: absolute;
+	font-size: 12px;
+	text-align: center;
+	bottom: -20px;
+	height: 20px;
+	line-height: 20px;
+	-webkit-transform: scale(0.9); 
+	-webkit-transition:all 1s 1.5s; /*chrome浏览器不会显示小于12px的字，只能用缩放的方式*/
+	-webkit-opacity: 0;
+}
+.h5_component_polyline_load .text{
+	-webkit-opacity:1;
+}
+.h5_component_polyline_leave .text{
+	-webkit-opacity:0;
+}	
